@@ -21,6 +21,7 @@ import com.yahoo.elide.core.RequestScope;
 import com.yahoo.elide.jsonapi.models.JsonApiDocument;
 import com.yahoo.elide.request.EntityProjection;
 
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -33,7 +34,7 @@ public class AsyncDbUtil {
 
     private Elide elide;
     private static AsyncDbUtil asyncUtil;
-    private DataStore dataStore;
+    @Getter private DataStore dataStore;
 
     protected static AsyncDbUtil getInstance(Elide elide) {
         if (asyncUtil == null) {
